@@ -43,11 +43,13 @@ local function init()
     -- rust setup
     {"rust-lang/rust.vim"},
 
-    -- sidebar
-    {"lambdalisue/fern.vim"},
-    {"lambdalisue/nerdfont.vim"},
-    {"lambdalisue/fern-renderer-nerdfont.vim"},
-    {"lambdalisue/fern-git-status.vim"},
+    -- sidebar file explorer
+    {
+      'nvim-tree/nvim-tree.lua',
+      requires = {
+        'nvim-tree/nvim-web-devicons', -- optional
+      },
+    },
 
     -- add/delete/change surrounding pairs
     {
