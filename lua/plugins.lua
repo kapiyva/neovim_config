@@ -19,7 +19,7 @@ local function init()
       requires = { {'nvim-lua/plenary.nvim'} }
     },
 
-    {
+    {-- ステータスバー装飾
       'nvim-lualine/lualine.nvim',
       requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     },
@@ -27,51 +27,15 @@ local function init()
     -- theme
     {'arcticicestudio/nord-vim'},
 
-    {
-      "folke/trouble.nvim",
-      requires = "nvim-tree/nvim-web-devicons",
-      config = function()
-        require("trouble").setup(
-          signs = {
-            error = "E",
-            warning = "W",
-            hint = "H",
-            information = "I",
-          },
-        )
-      end
-    },
-
-
     -- スクロールバー関連
     {
-      "petertriho/nvim-scrollbar",
-      config = function()
-        require('scrollbar').setup()
-      end,
+      "petertriho/nvim-scrollbar"
     },
     {-- 検索結果をスクロールバーに表示
-      "kevinhwang91/nvim-hlslens",
-      config = function()
-        require("hlslens").setup({
-           build_position_cb = function(plist, _, _, _)
-                require("scrollbar.handlers.search").handler.show(plist.start_pos)
-           end,
-        })
-        vim.cmd([[
-            augroup scrollbar_search_hide
-                autocmd!
-                autocmd CmdlineLeave : lua require('scrollbar.handlers.search').handler.hide()
-            augroup END
-        ]])
-      end,
+      "kevinhwang91/nvim-hlslens"
     },
     {-- Gitステータスをスクロールバーに表示
-      "lewis6991/gitsigns.nvim",
-      config = function()
-        require('gitsigns').setup()
-        require("scrollbar.handlers.gitsigns").setup()
-      end
+      "lewis6991/gitsigns.nvim"
     },
 
     -- rust setup
