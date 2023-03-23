@@ -1,0 +1,15 @@
+{
+  "diagnostic.autoRefresh": true,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "html",
+    "markdown",
+    "typescriptreact",
+    "typescript",
+    "javascriptreact",
+    "javascript",
+    "json",
+    "graphql",
+    "rust"
+  ]
+}
