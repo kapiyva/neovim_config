@@ -14,12 +14,14 @@ local function init()
     -- lsp管理
     {'neoclide/coc.nvim', branch = 'release'},
 
-    {-- ファジーファインダー
+    -- ファジーファインダー
+    {
       'nvim-telescope/telescope.nvim', tag = '0.1.1',
       requires = { {'nvim-lua/plenary.nvim'} }
     },
 
-    {-- ステータスバー装飾
+    -- ステータスバー装飾
+    {
       'nvim-lualine/lualine.nvim',
       requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     },
@@ -47,6 +49,16 @@ local function init()
     {"lambdalisue/fern-renderer-nerdfont.vim"},
     {"lambdalisue/fern-git-status.vim"},
 
+    -- add/delete/change surrounding pairs
+    {
+        "kylechui/nvim-surround",
+        tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+        config = function()
+            require("nvim-surround").setup({
+                -- Configuration here, or leave empty to use defaults
+            })
+        end
+    },
   }
 end
 
