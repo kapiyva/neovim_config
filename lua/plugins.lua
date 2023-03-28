@@ -7,27 +7,27 @@ local function init()
   packer.reset()
 
   packer.use{
-    { 'vim-jp/vimdoc-ja' },
+    { "vim-jp/vimdoc-ja" },
     -- パッケージ管理
     { "wbthomason/packer.nvim" },
 
     -- lsp管理
-    {'neoclide/coc.nvim', branch = 'release'},
+    {"neoclide/coc.nvim", branch = "release"},
 
     -- ファジーファインダー
     {
-      'nvim-telescope/telescope.nvim', tag = '0.1.1',
-      requires = { {'nvim-lua/plenary.nvim'} }
+      "nvim-telescope/telescope.nvim", tag = "0.1.1",
+      requires = { {"nvim-lua/plenary.nvim"} }
     },
 
     -- ステータスバー装飾
     {
-      'nvim-lualine/lualine.nvim',
-      requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+      "nvim-lualine/lualine.nvim",
+      requires = { "kyazdani42/nvim-web-devicons", opt = true }
     },
 
     -- theme
-    {'arcticicestudio/nord-vim'},
+    {"arcticicestudio/nord-vim"},
 
     -- スクロールバー関連
     {
@@ -45,9 +45,9 @@ local function init()
 
     -- sidebar file explorer
     {
-      'nvim-tree/nvim-tree.lua',
+      "nvim-tree/nvim-tree.lua",
       requires = {
-        'nvim-tree/nvim-web-devicons', -- optional
+        "nvim-tree/nvim-web-devicons", -- optional
       },
     },
 
