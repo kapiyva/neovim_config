@@ -61,6 +61,7 @@ local function init()
             })
         end
     },
+    {"github/copilot.vim"},
   }
 end
 
