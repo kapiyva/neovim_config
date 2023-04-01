@@ -2,63 +2,88 @@ local packer
 local function init()
   if not packer then
     packer = require "packer"
-    packer.init ({disable_commands = true})
+    packer.init ({
+      disable_commands = true,
+      display = {
+        open_fn = function()
+          return require("packer.util").float({ border = "single" })
+        end,
+      },
+    })
   end
   packer.reset()
 
   packer.use{
     { "vim-jp/vimdoc-ja" },
     -- パッケージ管理
-    { "wbthomason/packer.nvim" },
+    { "wbthomason/packer.nvim", opt = true },
 
     -- lsp管理
-    {"neoclide/coc.nvim", branch = "release"},
+    {
+      "neoclide/coc.nvim",
+      branch = "release",
+      config = function ()
+        require('config_plugin.coc')
+      end,
+    },
 
     -- ファジーファインダー
     {
       "nvim-telescope/telescope.nvim", tag = "0.1.1",
-      requires = { {"nvim-lua/plenary.nvim"} }
+      requires = {{"nvim-lua/plenary.nvim"}},
+      event = {"CmdwinEnter"},
+    },
+    -- ファジーファインダー上のファイルブラウザ
+    {
+      "nvim-telescope/telescope-file-browser.nvim",
+      requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+      event = {"CmdwinEnteBufReadr"},
+      after = "telescope.nvim",
+      config = function()
+        require('config_plugin.telescope')
+      end,
     },
 
     -- ステータスバー装飾
     {
       "nvim-lualine/lualine.nvim",
-      requires = { "kyazdani42/nvim-web-devicons", opt = true }
+      requires = { "kyazdani42/nvim-web-devicons"},
+      event = {"BufEnter","BufWinEnter"},
+      config = function ()
+        require('config_plugin.lualine')
+      end,
     },
 
     -- theme
-    {"arcticicestudio/nord-vim"},
+    {"arcticicestudio/nord-vim",
+      config = function ()
+        require('config_plugin.nord')
+      end,
+    },
 
     -- スクロールバー関連
     {
-      "petertriho/nvim-scrollbar"
-    },
-    {-- 検索結果をスクロールバーに表示
-      "kevinhwang91/nvim-hlslens"
+      "petertriho/nvim-scrollbar",
+      config = function ()
+        require('config_plugin.scrollbar')
+      end,
     },
     {-- Gitステータスをスクロールバーに表示
-      "lewis6991/gitsigns.nvim"
+      "lewis6991/gitsigns.nvim",
+      config = function ()
+        require('config_plugin.gitsigns')
+      end,
     },
 
     -- rust setup
     {"rust-lang/rust.vim"},
-
-    -- sidebar file explorer
-    {
-      "nvim-tree/nvim-tree.lua",
-      requires = {
-        "nvim-tree/nvim-web-devicons", -- optional
-      },
-    },
 
     -- add/delete/change surrounding pairs
     {
         "kylechui/nvim-surround",
         tag = "*", -- Use for stability; omit to use `main` branch for the latest features
         config = function()
-            require("nvim-surround").setup({
-                -- Configuration here, or leave empty to use defaults
-            })
+            require("nvim-surround").setup({})
         end
     },
     {"github/copilot.vim"},
