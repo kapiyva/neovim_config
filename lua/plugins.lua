@@ -23,7 +23,7 @@ local function init()
       "neoclide/coc.nvim",
       branch = "release",
       config = function ()
-        require('config_plugin.coc')
+        require('plugin_config.coc')
       end,
     },
 
@@ -31,16 +31,16 @@ local function init()
     {
       "nvim-telescope/telescope.nvim", tag = "0.1.1",
       requires = {{"nvim-lua/plenary.nvim"}},
-      event = {"CmdwinEnter"},
+      event = {"VimEnter"},
     },
     -- ファジーファインダー上のファイルブラウザ
     {
       "nvim-telescope/telescope-file-browser.nvim",
       requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
-      event = {"CmdwinEnteBufReadr"},
+      event = {"VimEnter"},
       after = "telescope.nvim",
       config = function()
-        require('config_plugin.telescope')
+        require('plugin_config.telescope')
       end,
     },
 
@@ -50,14 +50,15 @@ local function init()
       requires = { "kyazdani42/nvim-web-devicons"},
       event = {"BufEnter","BufWinEnter"},
       config = function ()
-        require('config_plugin.lualine')
+        require('plugin_config.lualine')
       end,
     },
 
     -- theme
-    {"arcticicestudio/nord-vim",
+    {
+      "folke/tokyonight.nvim",
       config = function ()
-        require('config_plugin.nord')
+        require('plugin_config.tokyonight')
       end,
     },
 
@@ -65,13 +66,13 @@ local function init()
     {
       "petertriho/nvim-scrollbar",
       config = function ()
-        require('config_plugin.scrollbar')
+        require('plugin_config.scrollbar')
       end,
     },
     {-- Gitステータスをスクロールバーに表示
       "lewis6991/gitsigns.nvim",
       config = function ()
-        require('config_plugin.gitsigns')
+        require('plugin_config.gitsigns')
       end,
     },
 
