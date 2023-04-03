@@ -14,7 +14,7 @@ local function init()
   packer.reset()
 
   packer.use{
-    { "vim-jp/vimdoc-ja" },
+    { "vim-jp/vimdoc-ja", opt = true },
     -- パッケージ管理
     { "wbthomason/packer.nvim", opt = true },
 
@@ -32,13 +32,6 @@ local function init()
       "nvim-telescope/telescope.nvim", tag = "0.1.1",
       requires = {{"nvim-lua/plenary.nvim"}},
       event = {"VimEnter"},
-    },
-    -- ファジーファインダー上のファイルブラウザ
-    {
-      "nvim-telescope/telescope-file-browser.nvim",
-      requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
-      event = {"VimEnter"},
-      after = "telescope.nvim",
       config = function()
         require('plugin_config.telescope')
       end,
@@ -87,7 +80,13 @@ local function init()
             require("nvim-surround").setup({})
         end
     },
-    {"github/copilot.vim"},
+    -- copilot
+    {"github/copilot.vim",
+      event = {"BufRead"},
+    },
+    
+    -- commentary
+    {"tpope/vim-commentary"},
   }
 end
 
