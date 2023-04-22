@@ -37,6 +37,14 @@ local function init()
       end,
     },
 
+    -- ファイルエクスプローラー
+    {
+      "lambdalisue/fern.vim",
+      config = function()
+        require('plugin_config.fern')
+      end,
+    },
+
     -- ステータスバー装飾
     {
       "nvim-lualine/lualine.nvim",
