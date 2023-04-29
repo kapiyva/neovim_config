@@ -37,6 +37,11 @@ local function init()
       end,
     },
 
+    -- ファイルツリー
+    {
+      "nvim-treesitter/nvim-treesitter",
+    },
+
     -- ファイルエクスプローラー
     {
       "lambdalisue/fern.vim",
