@@ -95,6 +95,8 @@ local function init()
     
     -- commentary
     {"tpope/vim-commentary"},
+    -- window resize
+    {"simeji/winresizer"},
   }
 end
 
