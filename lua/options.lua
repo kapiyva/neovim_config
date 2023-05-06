@@ -24,3 +24,4 @@ vim.cmd [[highlight FgCocErrorFloatBgCocFloating ctermfg=266]]
 vim.cmd [[highlight FgCocInfoFloatBgCocFloating ctermfg=266]]
 vim.cmd 'autocmd ColorScheme * highlight Comment ctermfg=gray'
 vim.cmd 'autocmd ColorScheme * highlight Visual ctermbg=243'
+vim.cmd 'autocmd ColorScheme * highlight lineNr guifg=#a9b1d6'
