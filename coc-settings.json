@@ -10,6 +10,8 @@
     "javascript",
     "json",
     "graphql",
-    "rust"
-  ]
+    "rust",
+    "python"
+  ],
+  "python.linting.flake8Enable": true
 }

@@ -102,6 +102,8 @@ local function init()
     {"tpope/vim-commentary"},
     -- window resize
     {"simeji/winresizer"},
+    -- flake8 for python
+    {"nvie/vim-flake8.git"},
   }
 end
 
