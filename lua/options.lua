@@ -17,7 +17,7 @@ for k,v in pairs(options) do
   vim.o[k] = v
 end
 
-vim.g.mapleader = ","
+vim.g.mapleader = " "
 vim.keymap.set('n','<Esc><Esc>', ':nohl<CR>')
 
 vim.cmd [[highlight FgCocErrorFloatBgCocFloating ctermfg=266]]
