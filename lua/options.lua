@@ -11,6 +11,7 @@ local options = {
   list = true,
   tags = "./tags",
   signcolumn = yes,
+  fileformat = unix,
 }
 
 for k,v in pairs(options) do
