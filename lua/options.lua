@@ -12,6 +12,7 @@ local options = {
   tags = "./tags",
   signcolumn = yes,
   fileformat = unix,
+  auto_ctags = 1,
 }
 
 for k,v in pairs(options) do
