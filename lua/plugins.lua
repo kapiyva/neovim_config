@@ -82,9 +82,6 @@ local function init()
       end,
     },
 
-    -- ctags
-    {"soramugi/auto-ctags.vim"},
-
     -- rust setup
     {"rust-lang/rust.vim"},
 
