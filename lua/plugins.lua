@@ -43,10 +43,17 @@ local function init()
     },
 
     -- ファイルエクスプローラー
+    -- {
+    --   "lambdalisue/fern.vim",
+    --   config = function()
+    --     require('plugin_config.fern')
+    --   end,
+    -- },
     {
-      "lambdalisue/fern.vim",
+      "nvim-tree/nvim-tree.lua",
+      requires = { "kyazdani42/nvim-web-devicons" },
       config = function()
-        require('plugin_config.fern')
+        require('plugin_config.nvim-tree')
       end,
     },
 
@@ -102,8 +109,6 @@ local function init()
     {"tpope/vim-commentary"},
     -- window resize
     {"simeji/winresizer"},
-    -- flake8 for python
-    {"nvie/vim-flake8.git"},
   }
 end
 
