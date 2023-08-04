@@ -1,19 +1,4 @@
-local packer
-local function init()
-  if not packer then
-    packer = require "packer"
-    packer.init ({
-      disable_commands = true,
-      display = {
-        open_fn = function()
-          return require("packer.util").float({ border = "single" })
-        end,
-      },
-    })
-  end
-  packer.reset()
-
-  packer.use{
+return {
     { "vim-jp/vimdoc-ja", opt = true },
     -- パッケージ管理
     { "wbthomason/packer.nvim", opt = true },
@@ -22,6 +7,7 @@ local function init()
     {
       "neoclide/coc.nvim",
       branch = "release",
+      keys = { "<leader>" },
       config = function ()
         require('plugin_config.coc')
       end,
@@ -30,8 +16,8 @@ local function init()
     -- ファジーファインダー
     {
       "nvim-telescope/telescope.nvim", tag = "0.1.1",
-      requires = {{"nvim-lua/plenary.nvim"}},
-      event = {"VimEnter"},
+      dependencies = {"nvim-lua/plenary.nvim"},
+      keys = { "<leader>" },
       config = function()
         require('plugin_config.telescope')
       end,
@@ -43,15 +29,10 @@ local function init()
     },
 
     -- ファイルエクスプローラー
-    -- {
-    --   "lambdalisue/fern.vim",
-    --   config = function()
-    --     require('plugin_config.fern')
-    --   end,
-    -- },
     {
       "nvim-tree/nvim-tree.lua",
-      requires = { "kyazdani42/nvim-web-devicons" },
+      dependencies = { "kyazdani42/nvim-web-devicons" },
+      keys = { "<leader>" },
       config = function()
         require('plugin_config.nvim-tree')
       end,
@@ -60,8 +41,8 @@ local function init()
     -- ステータスバー装飾
     {
       "nvim-lualine/lualine.nvim",
-      requires = { "kyazdani42/nvim-web-devicons"},
-      event = {"BufEnter","BufWinEnter"},
+      dependencies = { "kyazdani42/nvim-web-devicons"},
+      lazy = true,
       config = function ()
         require('plugin_config.lualine')
       end,
@@ -84,6 +65,7 @@ local function init()
     },
     {-- Gitステータスをスクロールバーに表示
       "lewis6991/gitsigns.nvim",
+      lazy = true,
       config = function ()
         require('plugin_config.gitsigns')
       end,
@@ -95,14 +77,13 @@ local function init()
     -- add/delete/change surrounding pairs
     {
         "kylechui/nvim-surround",
-        tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+        lazy = true,
         config = function()
             require("nvim-surround").setup({})
         end
     },
     -- copilot
     {"github/copilot.vim",
-      event = {"BufRead"},
     },
     
     -- commentary
@@ -110,11 +91,3 @@ local function init()
     -- window resize
     {"simeji/winresizer"},
   }
-end
-
-return setmetatable({}, {
-  __index = function(_, key)
-    init()
-    return packer[key]
-  end,
-})

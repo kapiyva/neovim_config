@@ -1,8 +1,16 @@
-vim.api.nvim_create_user_command("PackerInstall", [[packadd packer.nvim | lua require("plugins").install()]], { bang = true })
-vim.api.nvim_create_user_command("PackerUpdate", [[packadd packer.nvim | lua require("plugins").update()]], { bang = true })
-vim.api.nvim_create_user_command("PackerSync", [[packadd packer.nvim | lua require("plugins").sync()]], { bang = true })
-vim.api.nvim_create_user_command("PackerClean", [[packadd packer.nvim | lua require("plugins").clean()]], { bang = true })
-vim.api.nvim_create_user_command("PackerCompile", [[packadd packer.nvim | lua require("plugins").compile()]], { bang = true })
+require("options")
 
-require('options')
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
 
+require("lazy").setup("plugins")
