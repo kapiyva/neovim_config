@@ -26,6 +26,7 @@ return {
     -- ファイルツリー
     {
       "nvim-treesitter/nvim-treesitter",
+      lazy = true,
     },
 
     -- ファイルエクスプローラー
@@ -84,10 +85,13 @@ return {
     },
     -- copilot
     {"github/copilot.vim",
+      keys = { "<leader>" },
     },
     
     -- commentary
     {"tpope/vim-commentary"},
     -- window resize
-    {"simeji/winresizer"},
+    {"simeji/winresizer",
+      keys = { "<leader>" },
+    },
   }
