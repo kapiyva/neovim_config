@@ -9,7 +9,7 @@ return {
       branch = "release",
       keys = { "<leader>" },
       config = function ()
-        require('plugin_config.coc')
+        require('pconf.coc')
       end,
     },
 
@@ -19,7 +19,7 @@ return {
       dependencies = {"nvim-lua/plenary.nvim"},
       keys = { "<leader>" },
       config = function()
-        require('plugin_config.telescope')
+        require('pconf.telescope')
       end,
     },
 
@@ -35,7 +35,7 @@ return {
       dependencies = { "kyazdani42/nvim-web-devicons" },
       keys = { "<leader>" },
       config = function()
-        require('plugin_config.nvim-tree')
+        require('pconf.nvim-tree')
       end,
     },
 
@@ -45,7 +45,7 @@ return {
       dependencies = { "kyazdani42/nvim-web-devicons"},
       lazy = true,
       config = function ()
-        require('plugin_config.lualine')
+        require('pconf.lualine')
       end,
     },
 
@@ -53,7 +53,7 @@ return {
     {
       "folke/tokyonight.nvim",
       config = function ()
-        require('plugin_config.tokyonight')
+        require('pconf.tokyonight')
       end,
     },
 
@@ -61,14 +61,14 @@ return {
     {
       "petertriho/nvim-scrollbar",
       config = function ()
-        require('plugin_config.scrollbar')
+        require('pconf.scrollbar')
       end,
     },
     {-- Gitステータスをスクロールバーに表示
       "lewis6991/gitsigns.nvim",
       lazy = true,
       config = function ()
-        require('plugin_config.gitsigns')
+        require('pconf.gitsigns')
       end,
     },
 
