@@ -7,7 +7,7 @@ return {
     {
       "neoclide/coc.nvim",
       branch = "release",
-      keys = { "<leader>" },
+      event = "InsertEnter",
       config = function ()
         require('pconf.coc')
       end,
@@ -17,7 +17,7 @@ return {
     {
       "nvim-telescope/telescope.nvim", tag = "0.1.1",
       dependencies = {"nvim-lua/plenary.nvim"},
-      keys = { "<leader>" },
+      keys = { "<leader>f" },
       config = function()
         require('pconf.telescope')
       end,
@@ -33,19 +33,9 @@ return {
     {
       "nvim-tree/nvim-tree.lua",
       dependencies = { "kyazdani42/nvim-web-devicons" },
-      keys = { "<leader>" },
-      config = function()
-        require('pconf.nvim-tree')
-      end,
-    },
-
-    -- ステータスバー装飾
-    {
-      "nvim-lualine/lualine.nvim",
-      dependencies = { "kyazdani42/nvim-web-devicons"},
-      lazy = true,
+      keys = { "<leader>e" },
       config = function ()
-        require('pconf.lualine')
+        require('pconf.nvim-tree')
       end,
     },
 
@@ -54,6 +44,16 @@ return {
       "folke/tokyonight.nvim",
       config = function ()
         require('pconf.tokyonight')
+      end,
+    },
+
+    -- ステータスバー装飾
+    {
+      "nvim-lualine/lualine.nvim",
+      dependencies = { "kyazdani42/nvim-web-devicons" },
+      event = "UIEnter",
+      config = function ()
+        require('pconf.lualine')
       end,
     },
 
@@ -66,14 +66,17 @@ return {
     },
     {-- Gitステータスをスクロールバーに表示
       "lewis6991/gitsigns.nvim",
-      lazy = true,
+      event = "UIEnter",
       config = function ()
         require('pconf.gitsigns')
       end,
     },
 
     -- rust setup
-    {"rust-lang/rust.vim"},
+    {
+      "rust-lang/rust.vim",
+      ft = "*.rs",
+    },
 
     -- add/delete/change surrounding pairs
     {
@@ -89,9 +92,12 @@ return {
     },
     
     -- commentary
-    {"tpope/vim-commentary"},
+    {"tpope/vim-commentary",
+      lazy = true,
+    },
     -- window resize
     {"simeji/winresizer",
       keys = { "<leader>" },
     },
   }
+
