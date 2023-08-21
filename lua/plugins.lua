@@ -22,6 +22,9 @@ return {
         require('pconf.telescope')
       end,
     },
+    {
+      "fannheyward/telescope-coc.nvim"
+    },
 
     -- ファイルツリー
     {
