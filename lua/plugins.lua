@@ -7,7 +7,7 @@ return {
     {
       "neoclide/coc.nvim",
       branch = "release",
-      event = "InsertEnter",
+      event = "UIEnter",
       config = function ()
         require('pconf.coc')
       end,
@@ -75,7 +75,7 @@ return {
     -- rust setup
     {
       "rust-lang/rust.vim",
-      ft = "*.rs",
+      ft = "rust",
     },
 
     -- add/delete/change surrounding pairs
@@ -93,11 +93,11 @@ return {
     
     -- commentary
     {"tpope/vim-commentary",
-      lazy = true,
+      keys = { "v" },
     },
     -- window resize
     {"simeji/winresizer",
-      keys = { "<leader>" },
+      keys = { "<C-E>" },
     },
   }
 
