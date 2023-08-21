@@ -32,7 +32,7 @@ return {
     -- ファイルエクスプローラー
     {
       "nvim-tree/nvim-tree.lua",
-      dependencies = { "kyazdani42/nvim-web-devicons" },
+      dependencies = { "nvim-tree/nvim-web-devicons" },
       keys = { "<leader>e" },
       config = function ()
         require('pconf.nvim-tree')
@@ -50,7 +50,7 @@ return {
     -- ステータスバー装飾
     {
       "nvim-lualine/lualine.nvim",
-      dependencies = { "kyazdani42/nvim-web-devicons" },
+      dependencies = { "nvim-tree/nvim-web-devicons" },
       event = "UIEnter",
       config = function ()
         require('pconf.lualine')
@@ -78,7 +78,7 @@ return {
       ft = "rust",
     },
 
-    -- move cursor more smart
+    -- カーソルジャンプ
     { 
       "phaazon/hop.nvim",
       config = function()
@@ -89,7 +89,6 @@ return {
     -- add/delete/change surrounding pairs
     {
         "kylechui/nvim-surround",
-        lazy = true,
         config = function()
             require("nvim-surround").setup({})
         end
