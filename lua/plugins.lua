@@ -78,6 +78,14 @@ return {
       ft = "rust",
     },
 
+    -- move cursor more smart
+    { 
+      "phaazon/hop.nvim",
+      config = function()
+        require('pconf.hop')
+      end
+    },
+
     -- add/delete/change surrounding pairs
     {
         "kylechui/nvim-surround",
