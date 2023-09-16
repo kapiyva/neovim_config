@@ -1,8 +1,4 @@
 return {
-    { "vim-jp/vimdoc-ja", opt = true },
-    -- パッケージ管理
-    { "wbthomason/packer.nvim", opt = true },
-
     -- lsp管理
     {
       "neoclide/coc.nvim",
