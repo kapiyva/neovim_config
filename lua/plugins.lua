@@ -101,9 +101,5 @@ return {
     {"tpope/vim-commentary",
       keys = { "v" },
     },
-    -- window resize
-    {"simeji/winresizer",
-      keys = { "<C-E>" },
-    },
   }
 
