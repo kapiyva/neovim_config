@@ -1,4 +1,4 @@
-local options = {
+ local options = {
   backup = false,
   swapfile = false,
   writebackup = false,
@@ -9,10 +9,10 @@ local options = {
   shiftwidth = 2,
   tabstop = 2,
   list = true,
-  tags = "./tags",
+  splitbelow = true,
+  splitright = true,
   signcolumn = yes,
   fileformat = unix,
-  auto_ctags = 1,
 }
 
 for k,v in pairs(options) do
@@ -21,4 +21,11 @@ end
 
 vim.g.mapleader = ","
 vim.keymap.set('n','<Esc><Esc>', ':nohl<CR>')
+
+-- Terminal mode
+vim.keymap.set('t','<Esc>', '<C-\\><C-n>')
+vim.api.nvim_create_autocmd("TermOpen",{
+  pattern = "*",
+  command = "startinsert",
+})
 
