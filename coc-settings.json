@@ -13,5 +13,5 @@
     "rust",
     "python"
   ],
-  "python.linting.flake8Enable": true
+  "tsserver.experimental.enableProjectDiagnostics": true
 }
