@@ -24,6 +24,10 @@ vim.keymap.set('n','<Esc><Esc>', ':nohl<CR>')
 
 -- Terminal mode
 vim.keymap.set('t','<Esc>', '<C-\\><C-n>')
+vim.api.nvim_create_user_command("T", function(opts)
+    vim.cmd("sp|terminal")
+end,{})
+
 vim.api.nvim_create_autocmd("TermOpen",{
   pattern = "*",
   command = "startinsert",
