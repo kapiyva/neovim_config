@@ -1,6 +1,7 @@
 require('telescope').setup({
   defaults = {
-    file_ignore_patterns = { 'node_modules', '.git', 'venv', },
+    file_ignore_patterns = { 'node_modules', 'venv', },
+    path_display = {'shorten'},
   },
   extentions = {
     coc = {
