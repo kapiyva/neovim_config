@@ -13,6 +13,7 @@
   splitright = true,
   signcolumn = yes,
   fileformat = unix,
+  timeout = false,
 }
 
 for k,v in pairs(options) do
