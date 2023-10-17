@@ -101,5 +101,11 @@ return {
     {"tpope/vim-commentary",
       keys = { "v" },
     },
+
+    {
+      'windwp/nvim-autopairs',
+      event = "InsertEnter",
+      opts = {} -- this is equalent to setup({}) function
+    },
   }
 
