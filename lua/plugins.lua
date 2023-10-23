@@ -5,7 +5,7 @@ return {
       branch = "release",
       event = "UIEnter",
       config = function ()
-        require('pconf.coc')
+        require("pconf.coc")
       end,
     },
 
@@ -15,12 +15,11 @@ return {
       dependencies = {"nvim-lua/plenary.nvim"},
       keys = { "<leader>f" },
       config = function()
-        require('pconf.telescope')
+        require("pconf.telescope")
       end,
     },
-    {
-      "fannheyward/telescope-coc.nvim"
-    },
+    { "fannheyward/telescope-coc.nvim" },
+    { "nvim-telescope/telescope-media-files.nvim" },
 
     -- ファイルツリー
     {
@@ -34,7 +33,7 @@ return {
       dependencies = { "nvim-tree/nvim-web-devicons" },
       keys = { "<leader>e" },
       config = function ()
-        require('pconf.nvim-tree')
+        require("pconf.nvim-tree")
       end,
     },
 
@@ -42,7 +41,7 @@ return {
     {
       "folke/tokyonight.nvim",
       config = function ()
-        require('pconf.tokyonight')
+        require("pconf.tokyonight")
       end,
     },
 
@@ -52,7 +51,7 @@ return {
       dependencies = { "nvim-tree/nvim-web-devicons" },
       event = "UIEnter",
       config = function ()
-        require('pconf.lualine')
+        require("pconf.lualine")
       end,
     },
 
@@ -60,14 +59,14 @@ return {
     {
       "petertriho/nvim-scrollbar",
       config = function ()
-        require('pconf.scrollbar')
+        require("pconf.scrollbar")
       end,
     },
     {-- Gitステータスをスクロールバーに表示
       "lewis6991/gitsigns.nvim",
       event = "UIEnter",
       config = function ()
-        require('pconf.gitsigns')
+        require("pconf.gitsigns")
       end,
     },
 
@@ -81,16 +80,16 @@ return {
     { 
       "phaazon/hop.nvim",
       config = function()
-        require('pconf.hop')
+        require("pconf.hop")
       end
     },
 
     -- add/delete/change surrounding pairs
     {
-        "kylechui/nvim-surround",
-        config = function()
-            require("nvim-surround").setup({})
-        end
+      "kylechui/nvim-surround",
+      config = function()
+          require("nvim-surround").setup({})
+      end
     },
     -- copilot
     {"github/copilot.vim",
@@ -102,10 +101,7 @@ return {
       keys = { "v" },
     },
 
-    {
-      'windwp/nvim-autopairs',
-      event = "InsertEnter",
-      opts = {} -- this is equalent to setup({}) function
-    },
+    -- window resize
+    {"simeji/winresizer"},
   }
 

@@ -75,7 +75,7 @@ keyset("n", "<leader>rn", "<Plug>(coc-rename)", {silent = true})
 
 
 -- Formatting selected code
-keyset("x", "<leader>f", "<Plug>(coc-format-selected)", {silent = true})
+-- keyset("x", "<leader>f", "<Plug>(coc-format-selected)", {silent = true})
 -- keyset("n", "<leader>f", "<Plug>(coc-format-selected)", {silent = true})
 
 
@@ -98,6 +98,7 @@ vim.api.nvim_create_autocmd("User", {
 -- Apply codeAction to the selected region
 -- Example: `<leader>aap` for current paragraph
 local opts = {silent = true, nowait = true}
+--[[
 keyset("x", "<leader>a", "<Plug>(coc-codeaction-selected)", opts)
 keyset("n", "<leader>a", "<Plug>(coc-codeaction-selected)", opts)
 
@@ -117,7 +118,7 @@ keyset("n", "<leader>r", "<Plug>(coc-codeaction-refactor-selected)", { silent = 
 
 -- Run the Code Lens actions on the current line
 keyset("n", "<leader>cl", "<Plug>(coc-codelens-action)", opts)
-
+]]
 
 -- Map function and class text objects
 -- NOTE: Requires 'textDocument.documentSymbol' support from the language server
@@ -184,3 +185,5 @@ keyset("n", "<space>j", ":<C-u>CocNext<cr>", opts)
 keyset("n", "<space>k", ":<C-u>CocPrev<cr>", opts)
 -- Resume latest coc list
 keyset("n", "<space>p", ":<C-u>CocListResume<cr>", opts)
+
+keyset("n", "<leader>o", ":CocOutline<cr>", opts)
