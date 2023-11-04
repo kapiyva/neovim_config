@@ -187,3 +187,5 @@ keyset("n", "<space>k", ":<C-u>CocPrev<cr>", opts)
 keyset("n", "<space>p", ":<C-u>CocListResume<cr>", opts)
 
 keyset("n", "<leader>o", ":CocOutline<cr>", opts)
+
+vim.cmd("command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument")

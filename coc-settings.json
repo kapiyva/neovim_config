@@ -1,17 +1,5 @@
 {
   "diagnostic.autoRefresh": true,
-  "coc.preferences.formatOnSaveFiletypes": [
-    "css",
-    "html",
-    "markdown",
-    "typescriptreact",
-    "typescript",
-    "javascriptreact",
-    "javascript",
-    "json",
-    "graphql",
-    "rust",
-    "python"
-  ],
+  "coc.preferences.formatOnSave": true,
   "tsserver.experimental.enableProjectDiagnostics": true
 }
