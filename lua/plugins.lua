@@ -11,7 +11,7 @@ return {
 
     -- ファジーファインダー
     {
-      "nvim-telescope/telescope.nvim", tag = "0.1.1",
+      "nvim-telescope/telescope.nvim",
       dependencies = {"nvim-lua/plenary.nvim"},
       keys = { "<leader>f" },
       config = function()
@@ -103,5 +103,13 @@ return {
 
     -- window resize
     {"simeji/winresizer"},
-  }
+
+    -- indent line
+    { "lukas-reineke/indent-blankline.nvim",
+      main = "ibl",
+      config = function()
+        require('ibl').setup()
+      end
+    }
+}
 
