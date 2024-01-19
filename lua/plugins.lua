@@ -93,7 +93,7 @@ return {
   },
   -- copilot
   {"github/copilot.vim",
-    keys = { "<leader>" },
+    event = "BufEnter"
   },
   
   -- commentary
@@ -110,6 +110,8 @@ return {
     config = function()
       require('ibl').setup()
     end
-  }
+  },
+
+  { "LunarWatcher/auto-pairs" }
 }
 
